@@ -11,6 +11,7 @@ function isPostRequest() {
 
 function getStates () {
     return array(
+                    ''=>'Please Select',
                     'AL'=>'ALABAMA',
                     'AK'=>'ALASKA',
                     'AS'=>'AMERICAN SAMOA',

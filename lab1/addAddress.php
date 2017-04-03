@@ -6,7 +6,6 @@
         require_once'./models/util.php';
         require_once './models/addressCRUD.php';
         require_once './models/validation.php';
-        //include './templates/header.php';
         
         $fullname = filter_input(INPUT_POST, 'fullname');
         $email = filter_input(INPUT_POST, 'email');
@@ -17,10 +16,12 @@
         $birthday = filter_input(INPUT_POST, 'birthday');
         
         $errors = [];
+        
+        //fill drop down
         $states = getStates();
         
         
-        
+        //checck for minimum requirements
         if(isPostRequest()) {
             
             if (empty($fullname)) {
@@ -28,33 +29,31 @@
             }
             
             if (filter_var($email, FILTER_VALIDATE_EMAIL) == false) {
-                $errors[] = "email format is required";  
+                $errors[] = "A valid email arrdess is required";  
             }
             
-            if(empty($email)) {
-                $errors[] = "Email is a required field"; 
-            }
             
             if (empty($addressline1)) {
-                $errors[] = "address is required";               
+                $errors[] = "Address Line 1 is a required field";               
             }
             
             if (empty($city)) {
-                $errors[] = "City is required";               
+                $errors[] = "City is a required field";               
             }
             
             if (empty($state)) {
-                $errors[] = "The state field is required";               
+                $errors[] = "The state field is required"; 
             }
             
-            if (isZipValid($zip) === 'false') {
+            if (isZipValid($zip) == 'false') {
                 $errors[] = "A valide zip code is required.";  
             }
             
-            if (isDateValid($birthday) === 'false') {
-            $errors[] = "Date is invaild, please re-enter.";  
+            if (isDateValid($birthday) === false) {
+            $errors[] = "A valide Birth Date is invaild, please re-enter.";  
             }
             
+            //clear textboxes
             if (count($errors) === 0) {
                 if (createAddress($fullname, $email, $addressline1, $city ,$state, $zip, $birthday)) {
                     $message = 'Address Added';
@@ -71,7 +70,9 @@
                 }
             }
             
-        }  
+        }
+        
+        //call necessary templates
         include './templates/add-address.html.php';
         include './templates/messages.html.php';
         include './templates/errors.html.php';

@@ -55,7 +55,7 @@
         </div>
         <div class="form-group">
              <div class="col-sm-2"></div>
-            <label for="date" class="col-sm-2 label-control pull-left">Birth Date</label>
+            <label for="birthday" class="col-sm-2 label-control pull-left">Birth Date</label>
             <div class="col-sm-5">
                 <input name="birthday" value="<?php echo $birthday;?>" class="form-control"/>
             </div>
