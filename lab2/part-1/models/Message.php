@@ -7,7 +7,7 @@
  *
  * @author 001389421
  */
-class Message implements IMssage{
+class Message implements IMessage{
     
     protected $messages = [];
     
@@ -16,11 +16,11 @@ class Message implements IMssage{
     }
 
     public function getAllMessages() {
-        return $this->mesages;
+        return $this->messages;
     }
 
     public function removeMessage($key) {
-        if ( array_ket_exists($key, $this->messages)) {
+        if (array_key_exists($key, $this->messages)) {
         unset($this->messages[$key]);
         }
     }

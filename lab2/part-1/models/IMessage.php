@@ -7,10 +7,13 @@
  */
 
 /**
- * Description of SuccessMessage
  *
  * @author 001389421
  */
-class SuccessMessage extends Message{
-    //put your code here
+interface IMessage {
+    public function addMessage($key, $msg);
+
+    public function removeMessage($key);
+
+    public function getAllMessages();
 }
