@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
     <head>
         <meta charset="UTF-8">
@@ -6,14 +7,12 @@
     </head>
     <body>
         <?php
-         require_once './autoload.php';
-         
-         $db = new addressCRUD();
-         $addresses = $db->readAllAddress();
-
-         include './templates/view-address.html.php';
-
+            require_once './autoload.php';
+            
+            $db = new addressCrud();
+            $addresses = $db->readAllAddress();
+            
+            include './templates/view-address.html.php';
         ?>
-        
     </body>
 </html>
