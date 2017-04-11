@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <form action ="#" method="post" class="form-horizontal">
         <h1>Add Address</h1>
         <div class="form-group">

@@ -2,7 +2,7 @@
 include './templates/header.php';
 require_once './autoload.php';
 
-//variable used for functioncall
+//variables used for function calls
 $addressCrud = new addressCrud();
 $util = new util();
 $validation = new validation();
@@ -15,7 +15,8 @@ $state = filter_input(INPUT_POST, 'state');
 $zip = filter_input(INPUT_POST, 'zip');
 $birthday = filter_input(INPUT_POST, 'birthday');
 
-$error = [];
+//initilizes an array to hold possible errors 
+$errors = [];
 
 //fill drop down
 $states = $util->getStates();

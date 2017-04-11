@@ -5,7 +5,9 @@
  *
  * @author James
  */
+
 class validation {
+    //validation for zip code
     function isZipValid($zip) {
     $zipRegex = '/^[0-9]{5}$/';
         if (preg_match($zipRegex, $zip)) {

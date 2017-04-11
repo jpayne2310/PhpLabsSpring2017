@@ -10,7 +10,8 @@ class util {
     function isPostRequest() {
     return ( filter_input(INPUT_SERVER, 'REQUEST_METHOD') === 'POST' );
     }
-
+    
+    //fill drop down
     function getStates () {
         //$myVar = new util();
         return array(

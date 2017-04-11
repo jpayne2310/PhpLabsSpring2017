@@ -6,13 +6,16 @@
  * @author James
  */
 class addressCrud extends DB {
-    
+   
     function __construct() {
         parent::__construct('mysql:host=localhost;port=3306;dbname=PHPAdvClassSpring2017', 'root', '');    
     }
     
+    /**
+     * 
+     * @return type
+     */
     function readAllAddress() {
-        //$myVar = new addressCrud();
         $stmt = $this->getDb()->prepare("SELECT * FROM address");
         
         $results = array();
@@ -22,8 +25,23 @@ class addressCrud extends DB {
         return $results;
     }
     
-    function createAddress ($fullname, $email, $addressline1, $city, $state, $zip, $birthday) {
-        $stmt = $this->getDb()->prepare("INSERT INTO address SET fullname = :fullname, email = :email, addressline1 = :addressline1, city = :city, state = :state, zip = :zip, birthday = :birthday");
+    /**
+     * 
+     * @param type $fullname
+     * @param type $email
+     * @param type $addressline1
+     * @param type $city
+     * @param type $state
+     * @param type $zip
+     * @param type $birthday
+     * @return boolean
+     */
+    function createAddress ($fullname, $email, $addressline1, $city, $state, 
+            $zip, $birthday) {
+        $stmt = $this->getDb()->prepare("INSERT INTO address SET fullname = "
+                . ":fullname, email = :email, addressline1 = :addressline1, "
+                . "city = :city, state = :state, zip = :zip, "
+                . "birthday = :birthday");
         $binds = array(
             ":fullname" => $fullname,
             ":email" => $email,
