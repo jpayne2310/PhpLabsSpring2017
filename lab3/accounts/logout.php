@@ -8,13 +8,14 @@
     <body>
         <h1>You are Logged out</h1>
         <?php
-        
+        include './autoload.php';
+        $util = new Util();
         
         
         include './views/destory.php';
-        include './autoload.php';
+        sleep(10);
         $page = 'login.php';
-        $redirect = redirect($page, $email);
+        $util->redirect($page);
         ?>
     </body>
 </html>
