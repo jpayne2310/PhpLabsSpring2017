@@ -8,7 +8,8 @@
         <form action ="#" method="post" class="form-horizontal">
         <div class="form-group">
             <div class="col-sm-2"></div>
-        
+            <h3><?php echo "Current user ID: " .$_SESSION['user_id']; ?></h3>
+            <h3><?php echo "Current user email: " .$_SESSION['email']; ?></h3>
         
          <div class="form-group">
             <div class="col-sm-10 col-sm-offset-2">

@@ -12,7 +12,9 @@
         
         
         include './views/destory.php';
-        
+        include './autoload.php';
+        $page = 'login.php';
+        $redirect = redirect($page, $email);
         ?>
     </body>
 </html>

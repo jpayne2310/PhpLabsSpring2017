@@ -23,10 +23,13 @@
             if($loginInfo > 0) {
                 //worked
                 $_SESSION['user_id'] = $loginInfo;
+                $_SESSION['email'] = $email;
                 $util->redirect("admin.php");
                  
             } else {
-                echo "did not work";
+                ?>
+        <h1> <?php echo "Invalid email and/or Password"; ?></h1>
+        <?php
             }
         }
         
