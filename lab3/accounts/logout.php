@@ -6,16 +6,18 @@
         <title></title>
     </head>
     <body>
-        <h1>You are Logged out</h1>
+        
         <?php
         include './autoload.php';
         $util = new Util();
         
+
+        require_once './views/destory.php';
         
-        include './views/destory.php';
-        sleep(10);
-        $page = 'login.php';
-        $util->redirect($page);
+        
+        //$page = 'login.php';
+        header('Refresh: 3; "login.php"');
+        //$util->redirect($page,5);
         ?>
     </body>
 </html>

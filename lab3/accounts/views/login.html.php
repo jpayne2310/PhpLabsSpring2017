@@ -29,7 +29,7 @@
             </div>
         </div>
 </form>
-<a href="index.php">Return to Home Page</a>
+<a href="signup.php">Sign-Up Page</a>
 
 <?php
     include_once './views/footer.html.php';

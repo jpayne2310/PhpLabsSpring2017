@@ -7,10 +7,9 @@
     </head>
     <body>
         <?php
-        // put your code here
+        
         session_start();
         include './autoload.php';
-        
         
         $util = new Util();
         $accounts = new Accounts();
@@ -31,11 +30,9 @@
         <h1> <?php echo "Invalid email and/or Password"; ?></h1>
         <?php
             }
-        }
-        
-        include './views/login.html.php';
-        
-        ?>
-        
+        }        
+        include './views/login.html.php';      
+        include './views/errors.html.php';
+        ?>        
     </body>
 </html>

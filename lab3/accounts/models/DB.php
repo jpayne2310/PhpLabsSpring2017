@@ -6,13 +6,11 @@
  * @author GForti
  */
 
-
 class DB {
     
     protected $db = null;
     private $dbConfig = array();
    
-     
     /**
     * The contructor requires.
     *    
@@ -53,7 +51,6 @@ class DB {
         }
         return $this->db;        
     }
-    
     /**
     * A method to close our database connection.
     *    
@@ -61,7 +58,5 @@ class DB {
     */  
      public function closeDB() {        
         $this->db = null;        
-    }
-    
-    
+    }  
 }

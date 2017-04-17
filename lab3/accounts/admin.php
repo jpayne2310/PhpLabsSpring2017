@@ -1,10 +1,8 @@
         <?php
-        
-        include_once './views/header.php';
-        
+        include_once './views/header.php';        
         include './views/session-access.html.php';
         ?>
-        <h1>Admin</h1>
+        <h1>Admin Page</h1>
         <form action ="#" method="post" class="form-horizontal">
         <div class="form-group">
             <div class="col-sm-2"></div>
