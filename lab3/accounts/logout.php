@@ -9,15 +9,10 @@
         
         <?php
         include './autoload.php';
-        $util = new Util();
-        
 
         require_once './views/destory.php';
-        
-        
-        //$page = 'login.php';
-        header('Refresh: 3; "login.php"');
-        //$util->redirect($page,5);
+         $util = new Util();
+        $util->redirect("login.php?logout=true");
         ?>
     </body>
 </html>

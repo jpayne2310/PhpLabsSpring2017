@@ -6,17 +6,22 @@
         <title></title>
     </head>
     <body>
-        <?php
-        
+        <?php    
         session_start();
         include './autoload.php';
-        
+        $errors = [];
         $util = new Util();
         $accounts = new Accounts();
                 
         $email = filter_input(INPUT_POST, 'email');
         $password = filter_input(INPUT_POST, 'password');
         
+        if(filter_input(INPUT_GET, 'logout' ) != null)
+                //$status = filter_input(INPUT_GET,'logout');
+            {
+                $errors[] = "You are logged out";
+            }
+
         if ($util->isPostRequest()) {
             $loginInfo = $accounts->login($email, $password);
             if($loginInfo > 0) {
