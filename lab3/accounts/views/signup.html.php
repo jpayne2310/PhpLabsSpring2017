@@ -8,15 +8,18 @@
             <div class="col-sm-2"></div>
             <label class="col-sm-2 label-control pull-left">Email: </label>
             <div class="col-sm-5">
-                <input name="email" value="<?php echo $email;?>" class="form-control"/>      
+                <input name="email" value="<?php echo $email;?>" 
+                       class="form-control"/>      
             </div>
             <div class="col-sm-3"></div>
         </div>
         <div class="form-group">
             <div class="col-sm-2"></div>
-            <label for="password" class="col-sm-2 label-control pull-left">Password: </label>
+            <label for="password" 
+                   class="col-sm-2 label-control pull-left">Password: </label>
             <div class="col-sm-5">
-                <input name="password" type="password" value="<?php echo $password;?>" class="form-control" />
+                <input name="password" type="password" 
+                       value="<?php echo $password;?>" class="form-control" />
             </div>
             <div class="col-sm-3"></div>
         </div>

@@ -12,11 +12,8 @@ class Accounts extends DB {
         'DB_DNS' => 'mysql:host=localhost;port=3306;dbname=PHPAdvClassSpring2017',
         'DB_USER' => 'root',
         'DB_PASSWORD' => ''
-        );
-        
-        parent::__construct($dbConfig);
-        
-        
+        );       
+        parent::__construct($dbConfig);       
     }
     
     public function signup ($email, $password){
@@ -29,23 +26,16 @@ class Accounts extends DB {
         );      
         
             if ($stmt->execute($binds) && $stmt->rowCount()>0){
-                //if($validation->isEmailValid($email)) {
-                    //var_dump("hey you");
-                return true; 
-                //else {
-                    //var_dump("hi mom");
-                   // return false;
-                //}
-            } else {
-            return false;}
+                return true;} 
+                else {
+                return false;}
     }
 
     public function login($email, $password) {
         $db = $this->getDB();
         $stmt = $db->prepare("SELECT * FROM users WHERE email = :email LIMIT 1");
         $binds = array(
-        ":email" => $email
-        
+        ":email" => $email      
         );      
         
             if ($stmt->execute($binds) && $stmt->rowCount()>0){
@@ -55,6 +45,5 @@ class Accounts extends DB {
         }
         return 0;
     }
-
 }
 }

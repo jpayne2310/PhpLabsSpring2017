@@ -22,24 +22,30 @@
         //initilize array for desire output format
         $errors = [];
         
+        //set validation requirements
         if ($util->isPostRequest()) {
             
-            //check for successful login
-            if($accounts->signup($email, $password))
-            {
-                if($validation->isEmailValid($email)) {
-                $util->redirect("login.php", array("email=>$email"));
-                }else {
+            if(!$validation->isEmailValid($email)) {
                     $errors[] = "Invalid email address, please re-enter.";
-                }
-              
-            } else {
+            }
+            
+            if (empty($password)) {
+                $errors[] = "Password is required";               
+            }
+            
+            //check for successful login
+            if($errors == null)
+            {
+                if($accounts->signup($email, $password)){
+                    $util->redirect("login.php");
+                } else {
                         $errors[] = "That email address already exist.";
                         $errors[] = "Use the link to the Login Page.";
                         $errors[] = "Or enter a different email address.";
                 
                 $email = "";
                 $password = "";
+                }
             }
         }
         include './views/signup.html.php';

@@ -14,7 +14,6 @@ class Util {
    public function isPostRequest() {
        return ( filter_input(INPUT_SERVER, 'REQUEST_METHOD') === 'POST' );
    }
-   
    /**
     * Generate link.
     * @param string $page target page
@@ -25,7 +24,6 @@ class Util {
     public function createLink($page, array $params = array()) {        
         return $page . '?' .http_build_query($params);
     }
-    
     /**
     * Redirect to the given page.
     * @param type $page target page
@@ -37,7 +35,6 @@ class Util {
         header('Location: ' . $this->createLink($page, $params));
         die();
     }
-    
     /**
     * Get all values from a post form.
     * 
@@ -45,9 +42,7 @@ class Util {
     */
     public function getPostValues() {
         return filter_input_array(INPUT_POST);
-    }
-
-    
+    }  
     /**
      * Get value of the URL param.
      * 

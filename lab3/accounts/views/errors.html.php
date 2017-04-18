@@ -3,7 +3,7 @@
     <div class="col-sm-4">
 <ul style="list-style-type:none">
     <?php foreach ($errors as $error): ?>
-        <li class="bg-danger"><?php echo $error; ?></li>
+        <li class="bg-warning"><?php echo $error; ?></li>
     <?php endforeach; ?>
     </div>
     <div class="col-sm-8"></div>
