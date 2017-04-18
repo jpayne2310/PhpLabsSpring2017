@@ -16,12 +16,12 @@
         $email = filter_input(INPUT_POST, 'email');
         $password = filter_input(INPUT_POST, 'password');
         
-        if(filter_input(INPUT_GET, 'logout' ) != null)
+        if(filter_input(INPUT_GET, 'lhw03' ) != null)
                 //$status = filter_input(INPUT_GET,'logout');
             {
                 $errors[] = "You are logged out";
             }
-
+        
         if ($util->isPostRequest()) {
             $loginInfo = $accounts->login($email, $password);
             if($loginInfo > 0) {
@@ -32,8 +32,8 @@
                  
             } else {
                 ?>
-        <h1> <?php echo "Invalid email and/or Password"; ?></h1>
-        <?php
+        <h1> <?php $errors[] = "Invalid email and/or Password"; ?></h1>
+        <?php $errors[0] = "";
             }
         }        
         include './views/login.html.php';      

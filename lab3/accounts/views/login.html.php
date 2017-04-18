@@ -1,8 +1,6 @@
 <?php
     include_once './views/header.php';
     ?>
-
-
 <!DOCTYPE html>
 <form action ="#" method="post" class="form-horizontal">
         <h1>Login</h1>
@@ -30,7 +28,5 @@
         </div>
 </form>
 <a href="signup.php">Sign-Up Page</a>
-
 <?php
     include_once './views/footer.html.php';
-    ?>

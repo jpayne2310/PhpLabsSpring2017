@@ -20,6 +20,7 @@ class Accounts extends DB {
     }
     
     public function signup ($email, $password){
+        $validation = new Validation();
         $db = $this->getDB();
         $stmt = $db->prepare("INSERT INTO users SET email = :email, password = :password, created = now()");
         $binds = array(
@@ -28,9 +29,15 @@ class Accounts extends DB {
         );      
         
             if ($stmt->execute($binds) && $stmt->rowCount()>0){
-                return true;
-        }
-        return false;
+                //if($validation->isEmailValid($email)) {
+                    //var_dump("hey you");
+                return true; 
+                //else {
+                    //var_dump("hi mom");
+                   // return false;
+                //}
+            } else {
+            return false;}
     }
 
     public function login($email, $password) {

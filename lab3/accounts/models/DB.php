@@ -19,11 +19,18 @@ class DB {
     public function __construct($dbConfig) {
         $this->setDbConfig($dbConfig);      
     }
-    
+    /**
+     * 
+     * @return type
+     */
     private function getDbConfig() {
         return $this->dbConfig;
     }
-
+    /**
+     * 
+     * @param type $dbConfig
+     * @throws ArrayException
+     */
     private function setDbConfig($dbConfig) {
         if(is_array($dbConfig)){
         $this->dbConfig = $dbConfig;
