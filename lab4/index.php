@@ -1,8 +1,8 @@
 <?php
 
-include './views/header.php';
+include './views/header.html.php';
 
-include './DirectoryIterator.php';
+include './views/fileTable.html.php';
 
 include './views/upload-form.php';
 
