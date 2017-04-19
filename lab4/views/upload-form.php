@@ -2,7 +2,7 @@
 <div class="row">
 <!-- The data encoding type, enctype, MUST be specified as below -->
 <form enctype="multipart/form-data" action="upload.php" method="POST">
-    <h1>Upload Me</h1>
+    
     <!-- MAX_FILE_SIZE must precede the file input field -->
     <!-- <input type="hidden" name="MAX_FILE_SIZE" value="30000" /> -->
     <!-- Name of input element determines name in $_FILES array -->
