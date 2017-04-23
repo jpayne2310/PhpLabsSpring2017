@@ -29,7 +29,7 @@
         <tr>
             <td><?php echo $fileNumber; ?></td>
             <td><?php echo $fileInfo->getFilename(); ?></td>
-            <td><a href="./views/read.html.php?<?php echo $fileInfo->getFilename(); ?>">View</a></td>
+            <td><a href="./read.php?thing=<?php echo $fileInfo->getFilename(); ?>">View</a></td>
             <td><a href="url">Delete</a></td>
         </tr>
         <?php endif; ?>
