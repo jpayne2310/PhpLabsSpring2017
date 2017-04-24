@@ -36,7 +36,7 @@
                 }
 
                 // You should also check filesize here. 
-                if ($_FILES[$keyName]['size'] > 1000000) {
+                if ($_FILES[$keyName]['size'] > 700000) {
                     throw new RuntimeException('Exceeded filesize limit.');
                 }
 
@@ -67,7 +67,16 @@
                 // On this example, obtain safe unique name from its binary data.
 
                 $salt = uniqid(mt_rand(), true);
-                $fileName = 'file_' . sha1($salt . sha1_file($_FILES[$keyName]['tmp_name']));
+                if($ext == 'docx' || $ext =='txt' || $ext =='pdf' || $ext =='doc' || $ext =='html') {
+                    $fileName = 'text_' . sha1($salt . sha1_file($_FILES[$keyName]['tmp_name']));
+                }
+                else if($ext == 'jpg' || $ext =='png' || $ext =='gif') {
+                    $fileName = 'image_' . sha1($salt . sha1_file($_FILES[$keyName]['tmp_name']));
+                }
+                else if ($ext == 'xls' || $ext =='xlsx') {
+                    $fileName = 'sheet_' . sha1($salt . sha1_file($_FILES[$keyName]['tmp_name']));
+                }
+                
                 $location = sprintf('./uploads/%s.%s', $fileName, $ext);
 
                 if (!is_dir('./uploads')) {
@@ -95,11 +104,13 @@
         <?php if ( isset($fileName) ) : ?>
             <h2><?php echo $fileName; ?> is uploaded successfully.</h2>
         <?php 
-        
-        else: ?>
+        header('Location: index.php?up=1');
+        else: 
+            header('Location: index.php?up=0');
+            ?>
             <p><?php echo $error; ?></p>
         <?php endif; 
-        header('Location: index.php?up=1');
+        
         ?>
 
     </body>
