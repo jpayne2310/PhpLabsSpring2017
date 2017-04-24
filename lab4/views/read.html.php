@@ -1,16 +1,17 @@
 
 <div class ="row">
     <div class ="col-sm-12">
-        <h2><span class="label label-success ">File Size:</span>
-            <?php echo $size . " bytes." ?></h2>
-        <h2><span class="label label-success ">File Type:</span>
-            <?php echo $type ?></h2>
-        <h2><span class="label label-success ">File Upload Date:</span>
-            <?php echo $update ?></h2>
-        <h2><span class="label label-success ">File Path:</span>
-            <?php echo $fpath ?></h2>
-        <h2><span class="label label-success ">File Path Name:</span>
-            <?php echo $npath ?></h2>
+        <h3><span class="label label-success ">File Size:</span>
+            <?php echo $size . " bytes." ?></h3>
+        <h3><span class="label label-success ">File Type:</span>
+            <?php echo $type ?></h3>
+        <h3><span class="label label-success ">File Upload Date:</span>
+            <?php echo $update ?></h3>
+        <h3><span class="label label-success ">File Path:</span>
+            <?php echo $fpath ?></h3>
+        <h3><span class="label label-success ">File Path Name:</span>
+            <?php echo $npath ?></h3>
+        <img src="<?php echo $npath; ?>" />
     </div>
 </div>
 <div class="row>">

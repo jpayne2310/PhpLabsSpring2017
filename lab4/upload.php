@@ -94,9 +94,13 @@
 
         <?php if ( isset($fileName) ) : ?>
             <h2><?php echo $fileName; ?> is uploaded successfully.</h2>
-        <?php else: ?>
+        <?php 
+        
+        else: ?>
             <p><?php echo $error; ?></p>
-        <?php endif; ?>
+        <?php endif; 
+        header('Location: index.php?up=1');
+        ?>
 
     </body>
 </html>
