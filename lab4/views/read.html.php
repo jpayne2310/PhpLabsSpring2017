@@ -56,7 +56,9 @@ if ($ftype == "ima") {
         <?php } 
     elseif ($ftype == "tex") {
     ?>
-    <li><iframe src="<?php echo $npath; ?>" width="1200" height="1200"></iframe>
+    <div class="embed-responsive embed-responsive-4by3"
+    <li><iframe src="<?php echo $npath; ?>" class="embed-responsive-item"></iframe>
+    </div>
         <?php } 
     elseif ($ftype == "she") {
         ?>
@@ -65,10 +67,12 @@ if ($ftype == "ima") {
             </embed></object>
         <?php }
     ?>
+        
     <div class="row>">
         <div class="form-group" >
             <div class="col-sm-10 col-sm-offset-2">
-                <a href="<?php $fpath ?>" class="btn btn-primary">file direct</a>
+                <a href="<?php echo $npath?>" class="btn btn-primary" >file direct</a>
+
                 <a class="btn btn-primary" href="?delete=<?php echo $npath; ?>">Delete</a>
             </div>
         </div>
