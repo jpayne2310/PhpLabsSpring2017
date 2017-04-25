@@ -30,6 +30,8 @@
         <h3><?php echo $update ?></h3>
     </div>
 </div>
+
+<!--
 <div class ="row">
     <div class ="col-sm-2">
         <h3><span class="label label-success ">File Path:</span></h3>
@@ -45,9 +47,9 @@
     <div class="col-sm-10">
         <h3><?php echo $npath ?></h3>
     </div>
-</div>
+</div> -->
 <?php
-$ftype = substr($fname, 0, 3);  // returns "abcde"
+$ftype = substr($fname, 0, 3);
 if ($ftype == "ima") {
     ?>
     <img src="<?php echo $npath; ?>" height="300px" width="300px" />

@@ -3,7 +3,8 @@
     <head>
         <title></title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link type="text/css" href="css/bootstrap.css" rel="stylesheet" />
     </head>
     <body>
         <?php
@@ -14,8 +15,6 @@
         class Filehandler {
 
             function upLoad($keyName) {
-
-
                 // Undefined | Multiple Files | $_FILES Corruption Attack
                 // If this request falls under any of them, treat it invalid.
                 if (!isset($_FILES[$keyName]['error']) || is_array($_FILES[$keyName]['error'])) {
@@ -57,7 +56,6 @@
                 );
                 $ext = array_search($finfo->file($_FILES[$keyName]['tmp_name']), $validExts, true);
 
-
                 if (false === $ext) {
                     throw new RuntimeException('Invalid file format.');
                 }
@@ -67,16 +65,16 @@
                 // On this example, obtain safe unique name from its binary data.
 
                 $salt = uniqid(mt_rand(), true);
-                if($ext == 'docx' || $ext =='txt' || $ext =='pdf' || $ext =='doc' || $ext =='html') {
+                
+                //determine prefix
+                if ($ext == 'docx' || $ext == 'txt' || $ext == 'pdf' || $ext == 'doc' || $ext == 'html') {
                     $fileName = 'text_' . sha1($salt . sha1_file($_FILES[$keyName]['tmp_name']));
-                }
-                else if($ext == 'jpg' || $ext =='png' || $ext =='gif') {
+                } else if ($ext == 'jpg' || $ext == 'png' || $ext == 'gif') {
                     $fileName = 'image_' . sha1($salt . sha1_file($_FILES[$keyName]['tmp_name']));
-                }
-                else if ($ext == 'xls' || $ext =='xlsx') {
+                } else if ($ext == 'xls' || $ext == 'xlsx') {
                     $fileName = 'sheet_' . sha1($salt . sha1_file($_FILES[$keyName]['tmp_name']));
                 }
-                
+
                 $location = sprintf('./uploads/%s.%s', $fileName, $ext);
 
                 if (!is_dir('./uploads')) {
@@ -101,17 +99,17 @@
         }
         ?>
 
-        <?php if ( isset($fileName) ) : ?>
-            <h2><?php echo $fileName; ?> is uploaded successfully.</h2>
-        <?php 
-        header('Location: index.php?up=1');
-        else: 
-            header('Location: index.php?up=0');
+        <?php
+        include 'index.php';
+        if (isset($fileName)) :
             ?>
-            <p><?php echo $error; ?></p>
-        <?php endif; 
-        
-        ?>
+            <p class="alert alert-success"><?php echo $fileName; ?> is uploaded successfully.</p>
+            <?php
+        else:
+            ?>
+            <p class="alert alert-danger"><?php echo $error; ?></p>
 
+        <?php endif;
+        ?>
     </body>
 </html>
