@@ -2,8 +2,6 @@
 
 include './views/header.html.php';
 
-// http://php.net/manual/en/class.directoryiterator.php
-//DIRECTORY_SEPARATOR 
 $folder = './uploads';
 if (!is_dir($folder)) {
     die('Folder <strong>' . $folder . '</strong> does not exist');
@@ -12,12 +10,8 @@ $directory = new DirectoryIterator($folder);
 $delete = "";
 $errors = [];
 
-
-
 include './views/index.html.php';
-
 include './views/upload-form.php';
-
 
  if (isset($_GET['delete'])) {
             error_reporting(E_ERROR);
@@ -35,12 +29,9 @@ include './views/upload-form.php';
             }
             else {
                 $errors[] = "File upload unsuccessful";
+                echo RuntimeException();
             }
         }
-
-
-
-
 include './views/messages.html.php';
 include './views/errors.html.php';
 include './views/footer.html.php';

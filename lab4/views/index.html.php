@@ -1,9 +1,4 @@
 <!DOCTYPE html>
-
-<?php
-
-?>
-
 <table class="table table-striped">
     <thead>
         <tr>
@@ -29,10 +24,7 @@
                 </tr>
             <?php endif; ?>
         <?php
-        endforeach;
-
-
-       
+        endforeach;      
         ?> 
     </tbody>
 </table>

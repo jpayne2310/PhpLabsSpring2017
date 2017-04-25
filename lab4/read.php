@@ -3,12 +3,12 @@ include './views/header.html.php';
 $delete = "";
 //check and store value of passed url variable
 if (filter_input(INPUT_GET, 'thing') != null) {
-    $errors = $_GET['thing'];
+    $fname = $_GET['thing'];
 }
 
 //access uploads folder
 $file = '.' . DIRECTORY_SEPARATOR . 'uploads' . DIRECTORY_SEPARATOR . 
-        $errors . '.';
+        $fname . '.';
 //use file-info to set file type and size
 $finfo = new finfo(FILEINFO_MIME_TYPE);
 $type = $finfo->file($file);
