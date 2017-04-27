@@ -6,11 +6,7 @@ if (!is_dir($folder)) {
     die('Folder <strong>' . $folder . '</strong> does not exist');
 }
 $directory = new DirectoryIterator($folder);
-$delete = "";
 
 include './views/index.html.php';
 include './views/upload-form.php';
-
-
-
 include './views/footer.html.php';

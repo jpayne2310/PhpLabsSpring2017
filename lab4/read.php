@@ -22,8 +22,6 @@ $update = date("l F j, Y, g:i a", $finfo2->getMTime());
 $fpath = $finfo2->getRealPath();
 $npath = $finfo2->getPathname();
 
-
-
 include './views/read.html.php';
 include './views/footer.html.php';
 ?>
