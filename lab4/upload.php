@@ -76,7 +76,8 @@
                 }
 
                 $location = sprintf('./uploads/%s.%s', $fileName, $ext);
-
+                
+                //check for file, make one if not found
                 if (!is_dir('./uploads')) {
                     mkdir('./uploads');
                 }
@@ -84,12 +85,10 @@
                 if (!move_uploaded_file($_FILES[$keyName]['tmp_name'], $location)) {
                     throw new RuntimeException('Failed to move uploaded file.');
                 }
-
                 return $fileName . '.' . $ext;
             }
-
         }
-
+        
         $filehandler = new Filehandler();
 
         try {
@@ -97,9 +96,7 @@
         } catch (RuntimeException $e) {
             $error = $e->getMessage();
         }
-        ?>
 
-        <?php
         include 'index.php';
         if (isset($fileName)) :
             ?>
@@ -108,7 +105,6 @@
         else:
             ?>
             <p class="alert alert-danger"><?php echo $error; ?></p>
-
         <?php endif;
         ?>
     </body>

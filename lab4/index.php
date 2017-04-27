@@ -1,5 +1,4 @@
 <?php
-
 include './views/header.html.php';
 $folder = './uploads';
 if (!is_dir($folder)) {
@@ -7,7 +6,6 @@ if (!is_dir($folder)) {
 }
 $directory = new DirectoryIterator($folder);
 $delete = "";
-$errors = [];
 
 include './views/index.html.php';
 include './views/upload-form.php';
@@ -18,8 +16,10 @@ include './views/upload-form.php';
                 $delete = $_GET['delete'];
                 unlink($delete);
                 header("Location: index.php");
+                ?>
+                <p class="alert alert-success">File was deleted.</p>
+                <?php
             }
         }
-
 
 include './views/footer.html.php';

@@ -31,24 +31,8 @@
     </div>
 </div>
 
-<!--
-<div class ="row">
-    <div class ="col-sm-2">
-        <h3><span class="label label-success ">File Path:</span></h3>
-    </div>
-    <div class="col-sm-10">
-        <h3><?php echo $fpath ?></h3>
-    </div>
-</div>
-<div class ="row">
-    <div class ="col-sm-2">    
-        <h3><span class="label label-success ">Path Name:</span></h3>
-    </div>
-    <div class="col-sm-10">
-        <h3><?php echo $npath ?></h3>
-    </div>
-</div> -->
 <?php
+//check file type for display options
 $ftype = substr($fname, 0, 3);
 if ($ftype == "ima") {
     ?>
@@ -56,8 +40,8 @@ if ($ftype == "ima") {
         <?php } 
     elseif ($ftype == "tex") {
     ?>
-    <div class="embed-responsive embed-responsive-4by3"
-    <li><iframe src="<?php echo $npath; ?>" class="embed-responsive-item"></iframe>
+    <div class="embed-responsive embed-responsive-4by3">
+    <iframe src="<?php echo $npath; ?>" class="embed-responsive-item" ></iframe>
     </div>
         <?php } 
     elseif ($ftype == "she") {
@@ -77,5 +61,3 @@ if ($ftype == "ima") {
             </div>
         </div>
     </div>
-
-

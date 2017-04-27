@@ -10,9 +10,8 @@
     </thead>
     <tbody>
         <?php $fileNumber = 0;
-        foreach ($directory as $fileInfo) :
-            ?>        
-            <?php if ($fileInfo->isFile()) :
+        foreach ($directory as $fileInfo) :                
+             if ($fileInfo->isFile()) :
 
                 $fileNumber++;
                 ?>
@@ -22,8 +21,8 @@
                     <td><a href="./read.php?thing=<?php echo $fileInfo->getFilename(); ?>">View</a></td>
                     <td><a href="?delete=./uploads/<?php echo $fileInfo->getFilename();?>">Delete</a></td>
                 </tr>
-            <?php endif; ?>
-        <?php
+            <?php endif;
+        
         endforeach;      
         ?> 
     </tbody>
