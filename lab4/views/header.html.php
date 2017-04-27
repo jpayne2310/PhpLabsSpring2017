@@ -5,7 +5,6 @@
         <title>Assignment Four</title>
         <link type="text/css" href="css/bootstrap.css" rel="stylesheet" />
     </head>
-    <a href="footer.html.php"></a>
     <body>
         <div class="container-fluid">
         
