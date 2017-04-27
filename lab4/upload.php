@@ -1,12 +1,5 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title></title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link type="text/css" href="css/bootstrap.css" rel="stylesheet" />
-    </head>
-    <body>
+
         <?php
         /*
          * make sure php_fileinfo.dll extension is enable in php.ini
@@ -107,5 +100,3 @@
             <p class="alert alert-danger"><?php echo $error; ?></p>
         <?php endif;
         ?>
-    </body>
-</html>
