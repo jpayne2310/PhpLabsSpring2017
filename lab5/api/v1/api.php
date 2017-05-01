@@ -4,7 +4,8 @@ include_once './autoload.php';
 
 /*
  * The Rest server is sort of like the page is hosting the API
- * When a user calls the page (By url(HTTP), CURL, JavaScript etc.), the server(this Page) will handle the request.
+ * When a user calls the page (By url(HTTP), CURL, JavaScript etc.), 
+ * the server(this Page) will handle the request.
  */
 $restServer = new RestServer();
 
@@ -23,7 +24,8 @@ try {
     $resourceData = new $resourceClassName();   
    
         } catch (InvalidArgumentException $e) {
-        throw new InvalidArgumentException($resourceUCName . ' Resource Not Found');
+        throw new InvalidArgumentException($resourceUCName .
+                ' Resource Not Found');
         
     }
   
@@ -55,14 +57,29 @@ try {
         
         
         if ( 'PUT' === $verb ) {
-            
-            if ( NULL === $id ) {
-                throw new InvalidArgumentException($resourceUCName. 'ID ' . $id . ' was not found');
+            $restServer->setData($resourceData->get($id));
+            if ( $resourceData->put($serverData, $id) ) {
+                $restServer->setMessage('Record Updated');
+                $restServer->setStatus(201);
+            }
+            if (NULL == $id) {
+                throw new InvalidArgumentException($resourceUCName. 'ID ' 
+                        . $id . ' was not found');
             }
             
         }
         
-//add delete
+        if ('DELETE' === $verb) {
+            $restServer->setData($resourceData->get($id));
+            
+            if($resourceData->delete($id)) {
+                $restServer->setMessage('Record Deleted.');
+                $restServer->setStatus(201);
+            } else {
+                throw new Exception('Record not found.');
+            }
+        }
+        
    
     
     /* 400 exeception means user sent something wrong */

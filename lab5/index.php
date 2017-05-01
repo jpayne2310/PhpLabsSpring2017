@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <?php
-        include './autoload.php';
         include './views/header.html.php';
         include './views/corps.html.php';
         ?>
@@ -19,12 +18,12 @@
                 var verb = verbfield.options[verbfield.selectedIndex].value;
                 var resource = document.querySelector('input[name="resource"]').value;
                 var data = {
-                    'fullname': document.querySelector('input[name="corp"]').value,
-                    'email': document.querySelector('input[name="incorp_dt"]').value,
-                    'addressline1': document.querySelector('input[name="email"]').value,
-                    'city': document.querySelector('input[name="owner"]').value,
-                    'state': document.querySelector('input[name="phone"]').value,
-                    'zip': document.querySelector('input[name="location"]').value,
+                    'corp': document.querySelector('input[name="corp"]').value,
+                    'incorp_dt': document.querySelector('input[name="incorp_dt"]').value,
+                    'email': document.querySelector('input[name="email"]').value,
+                    'owner': document.querySelector('input[name="owner"]').value,
+                    'phone': document.querySelector('input[name="phone"]').value,
+                    'location': document.querySelector('input[name="location"]').value,
                 };
                 var results = document.querySelector('textarea[name="results"]');
 
