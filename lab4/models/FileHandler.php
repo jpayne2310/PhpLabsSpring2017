@@ -4,16 +4,13 @@
         /*
          * make sure php_fileinfo.dll extension is enable in php.ini
          */
-
-        class Filehandler {
-
+        class FileHandler {
             function upLoad($keyName) {
                 // Undefined | Multiple Files | $_FILES Corruption Attack
                 // If this request falls under any of them, treat it invalid.
                 if (!isset($_FILES[$keyName]['error']) || is_array($_FILES[$keyName]['error'])) {
                     throw new RuntimeException('Invalid parameters.');
                 }
-
                 // Check $_FILES['upfile']['error'] value.
                 switch ($_FILES[$keyName]['error']) {
                     case UPLOAD_ERR_OK:
@@ -26,12 +23,10 @@
                     default:
                         throw new RuntimeException('Unknown errors.');
                 }
-
                 // You should also check filesize here. 
                 if ($_FILES[$keyName]['size'] > 700000) {
                     throw new RuntimeException('Exceeded filesize limit.');
                 }
-
                 // DO NOT TRUST $_FILES['upfile']['mime'] VALUE !!
                 // Check MIME Type by yourself.
                 $finfo = new finfo(FILEINFO_MIME_TYPE);
@@ -90,7 +85,7 @@
             $error = $e->getMessage();
         }
 
-        include 'index.php';
+        include_once 'index.php';
         if (isset($fileName)) :
             ?>
             <p class="alert alert-success"><?php echo $fileName; ?> is uploaded successfully.</p>

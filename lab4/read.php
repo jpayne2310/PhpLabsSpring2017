@@ -1,4 +1,5 @@
 <?php
+include 'autoload.php';
 include './views/header.html.php';
 include 'delete.php';
 
