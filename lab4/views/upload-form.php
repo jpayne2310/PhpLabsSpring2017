@@ -10,6 +10,7 @@
             <span class="fileinput-filename"></span>
             <span class="fileinput-new"></span>
                 <input type="submit" value="Send File" class="btn btn-primary"/>
+                <input type="hidden" value="<?php echo date('H:i:s M d, Y'); ?>" readonly="readonly">
             </div>
         </div>
     </div>
