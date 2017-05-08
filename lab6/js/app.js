@@ -9,11 +9,13 @@
     
     function config($routeProvider) {
             $routeProvider.
+                //routing added for the home page
                 when('/', {
                     templateUrl: 'js/phone-list.template.html',
                     controller: 'PhoneListController',
                     controllerAs: 'vm'
             }).
+                //routing for the detail page phoneId reference included
                 when('/phones/:phoneId', {
                     templateUrl: 'js/phone-detail.template.html',
                     controller: 'PhoneDetailController',

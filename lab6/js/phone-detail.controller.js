@@ -4,7 +4,7 @@
     angular
             .module('app')
             .controller('PhoneDetailController', PhoneDetailController);
-    
+    //'Phones Service referenced for find phone function
     PhoneDetailController.$inject = ['$routeParams', 'PhonesService'];
     
     function PhoneDetailController($routeParams, PhonesService) {
