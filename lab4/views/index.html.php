@@ -22,8 +22,8 @@
                     <td><a href="?delete=./uploads/<?php echo $fileInfo->getFilename();?>">Delete</a></td>
                 </tr>
             <?php endif;
-        
-        endforeach;      
-        ?> 
+        endforeach;?>
+            <input type="hidden" value="<?php echo date('H:i:s M d, Y'); ?>" readonly="readonly">
+            
     </tbody>
 </table>
