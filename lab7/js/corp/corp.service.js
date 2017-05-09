@@ -62,7 +62,7 @@
     }
     
         function deleteCorp(corp_id) {
-            var _url = url + corp_id;
+            var _url = url + '/' + corp_id;
             return $http.delete(_url);
     }
 
