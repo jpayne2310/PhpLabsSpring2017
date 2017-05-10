@@ -26,7 +26,7 @@
                     .then(handleSuccess, handleFailed);
             
             function handleSuccess(response) {
-                return responce.data.data;
+                return response.data.data;
             }
         
             function handleFailed(error) {
@@ -34,14 +34,14 @@
             }
     }
 
-        function getCorp(corp_id) {
-            var _url = url + '/' + corp_id;
+        function getCorp(id) {
+            var _url = url + '/' + id;
             
             return $http.get(_url)
                     .then(handleSuccess, handleFailed);
             
             function handleSuccess(response) {
-                return responce.data.data;
+                return response.data.data;
             }
         
             function handleFailed(error) {
@@ -61,13 +61,13 @@
             return $http.post(url, model);
     }
     
-        function deleteCorp(corp_id) {
-            var _url = url + '/' + corp_id;
+        function deleteCorp(id) {
+            var _url = url + '/' + id;
             return $http.delete(_url);
     }
 
-        function putCorp(corp_id, corp, incorp_dt, email, owner, phone, location) {
-            var _url = url + '/' + corp_id;
+        function putCorp(id, corp, incorp_dt, email, owner, phone, location) {
+            var _url = url + '/' + id;
             var model = {};
             model.corp = corp;
             model.incorp_dt = incorp_dt;

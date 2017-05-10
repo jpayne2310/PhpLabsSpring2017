@@ -15,10 +15,15 @@
                     controller: 'CorpController',
                     controllerAs: 'vm'
         }).
-                when('corp/:corpId', {
+                when('corp/:id', {
                     templateUrl: 'js/corp/corp-detail.template.html',
                     controller: 'CorpDetailController',
                     controllerAs: 'vm'
-        });
+        }).
+                when('/corp/delete/:id', {
+                templateUrl: 'js/corp/corp-delete.template.html',
+                controller: 'CorpDeleteController',
+                controllerAs: 'vm'
+            });
     }
 })();
