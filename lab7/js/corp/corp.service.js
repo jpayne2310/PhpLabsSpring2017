@@ -36,7 +36,7 @@
 
         function getCorp(id) {
             var _url = url + '/' + id;
-            
+            //example of a promise
             return $http.get(_url)
                     .then(handleSuccess, handleFailed);
             
