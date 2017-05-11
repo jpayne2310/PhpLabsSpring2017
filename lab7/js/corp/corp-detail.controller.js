@@ -13,18 +13,20 @@
     function CorpDetailController($routeParams, CorpService) {
         var vm = this;
 
-        vm.corps = {};
-        var corpID = $routeParams.id;
+        vm.corp = {};
+        var corpId = $routeParams.corpId;
 
         activate();
 
         ////////////
 
         function activate() {
-            CorpService.getCorp(corpID).then(function (response) {
-                vm.corps = response;
-                
-                console.log(vm.corps);                
+            CorpService.getCorp(corpId).then(function (response) {
+                vm.corp = response;
+                 if (vm.corp.hasOwnProperty('incorp_dt')) {
+                    vm.corp.incorp_dt = new Date(vm.corp.incorp_dt);
+                }
+                console.log(vm.corp);                
                 loadMap('41.8239890,-71.4128340');
             });
         }

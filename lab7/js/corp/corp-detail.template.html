@@ -2,18 +2,18 @@
 
 <div class="content">
     
-    <h2>{{vm.corps.corp | uppercase}}</h2>
+    <h2>{{vm.corp.corp | uppercase}}</h2>
 
-    <p><strong> Created on:</strong> {{ vm.corps.incorp_dt | date:'longDate' }} </p>
+    <p><strong> Created on:</strong> {{ vm.corp.incorp_dt | date:'longDate' }} </p>
 
     <p><strong>Email: </strong>
-        <a href="" ng-href="mailto:{{vm.corps.email}}">{{vm.corps.email}}</a>
+        <a href="" ng-href="mailto:{{vm.corp.email}}">{{vm.corp.email}}</a>
     </p>
 
     <address>
-        {{vm.corps.owner}} <br />
-        {{vm.corps.phone}} <br /> 
-        {{vm.corps.location}}
+        {{vm.corp.owner}} <br />
+        {{vm.corp.phone}} <br /> 
+        {{vm.corp.location}}
     </address>
     
     

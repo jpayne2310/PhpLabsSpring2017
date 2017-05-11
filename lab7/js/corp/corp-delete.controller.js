@@ -14,14 +14,14 @@
 
         vm.message = '';
         
-        var corpId = $routeParams.id;
+        var corpId = $routeParams.corpId;
 
         activate();
 
         ////////////
 
         function activate() {
-            CorpService.deleteCorp(id).then(function (response) {
+            CorpService.deleteCorp(corpid).then(function (response) {
                 vm.message = 'Corporation Deleted';
             }, function(error) {
                 vm.message = 'Corporation was NOT Deleted';

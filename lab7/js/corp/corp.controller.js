@@ -12,7 +12,7 @@
     function CorpController(CorpService) {
         var vm = this;
 
-        vm.corp = [];
+        vm.corps = [];
         vm.deleteCorp = deleteCorp;
         vm.message = '';
 
@@ -26,8 +26,8 @@
             });
         }
         
-        function deleteCorp(Id) {
-             CorpService.deleteCorp(id).then(function (response) {
+        function deleteCorp(corpId) {
+             CorpService.deleteCorp(corpId).then(function (response) {
                 vm.message = 'Corporation Deleted';
                 activate();
             }, function(error) {

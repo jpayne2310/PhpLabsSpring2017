@@ -20,7 +20,7 @@
                     controller: 'CorpDetailController',
                     controllerAs: 'vm'
         }).
-                when('/corp/delete/:id', {
+                when('/corp/delete/:corpId', {
                 templateUrl: 'js/corp/corp-delete.template.html',
                 controller: 'CorpDeleteController',
                 controllerAs: 'vm'

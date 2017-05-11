@@ -4,7 +4,7 @@
             .module('app.corp')
             .factory('CorpService', CorpService);
     
-    CorpService.$inject = ['http', 'REQUEST'];
+    CorpService.$inject = ['$http', 'REQUEST'];
     
     function CorpService($http, REQUEST) {
         var url = REQUEST.Corp;
@@ -76,7 +76,7 @@
             model.phone = phone;
             model.location = location;
             
-            return $http.pur(_url, model);
+            return $http.put(_url, model);
     }
 
     
