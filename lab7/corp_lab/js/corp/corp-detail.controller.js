@@ -8,7 +8,8 @@
     CorpDetailController.$inject = ['$routeParams','CorpService'];
 
     /*
-     * This controller will find the details of an address from the address service.
+     * This controller will find the details of an address from the address 
+     * service.
      */
     function CorpDetailController($routeParams, CorpService) {
         var vm = this;

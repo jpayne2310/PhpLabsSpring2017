@@ -16,7 +16,7 @@
 
         var service = {
             'getAllCorps' : getAllCorps,
-            'getCorps' : getCorp,
+            'getCorp' : getCorp,
             'postCorp' : postCorp,
             'deleteCorp' : deleteCorp,
             'putCorp' : putCorp

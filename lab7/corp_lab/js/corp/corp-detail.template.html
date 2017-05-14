@@ -9,10 +9,14 @@
     <p><strong>Email: </strong>
         <a href="" ng-href="mailto:{{vm.corp.email}}">{{vm.corp.email}}</a>
     </p>
+    
+    <p><strong>Phone: </strong>
+        <a href="" ng-href="mailto:{{vm.corp.phone}}">{{vm.corp.phone}}</a>
+    </p>
 
     <address>
-        {{vm.corp.owner}} <br />
-        {{vm.corp.phone}}, {{vm.corp.location}}
+        <p><strong>Owner: </strong>{{vm.corp.owner}}</p> <br />
+        {{vm.corp.location}}
     </address>
     
     

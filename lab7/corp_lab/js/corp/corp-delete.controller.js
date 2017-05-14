@@ -3,7 +3,7 @@
     'use strict';
     angular
         .module('app.corp')
-        .controller('AddressDeleteController', AddressDeleteController);
+        .controller('CorpDeleteController', CorpDeleteController);
 
     CorpDeleteController.$inject = ['CorpService', '$routeParams'];
     /*
