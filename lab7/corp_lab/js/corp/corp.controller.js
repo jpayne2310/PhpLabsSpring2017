@@ -25,7 +25,7 @@
                 vm.corps = response;
             });
         }
-        /*  this function is ot currently in the scope of this assignment
+        /*  this function is not currently in the scope of this assignment
         function deleteCorp(corpId) {
              CorpService.deleteCorp(corpId).then(function (response) {
                 vm.message = 'Corporation Deleted';

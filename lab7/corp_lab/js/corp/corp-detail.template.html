@@ -2,34 +2,34 @@
     <div class='row'>
         <div class='col-sm-3'></div>
         <div class='col-sm-6'>
-<h1 class="text-danger">Corporation Details</h1>
-</div>
+            <h1 class="text-danger">Corporation Details</h1>
+        </div>
         <div class='col-sm-3'></div>
     </div>
 
-<div class="content">
-    
-    <h2>{{vm.corp.corp | uppercase}}</h2>
+    <div class="content">
 
-    <p><strong> Established on:</strong> {{ vm.corp.incorp_dt | date:'longDate' }} </p>
+        <h2>{{vm.corp.corp| uppercase}}</h2>
 
-    <p><strong>Email: </strong>
-        <a href="" ng-href="mailto:{{vm.corp.email}}">{{vm.corp.email}}</a>
-    </p>
-    
-    <p><strong>Phone: </strong>
-        <a href="" ng-href="mailto:{{vm.corp.phone}}">{{vm.corp.phone}}</a>
-    </p>
+        <p><strong> Established on:</strong> {{ vm.corp.incorp_dt | date:'longDate' }} </p>
 
-    <address>
-        <p><strong>Owner: </strong>{{vm.corp.owner}}</p> <br />
-        {{vm.corp.location}}
-    </address>
-    
-    
-    <div class="googleMap"></div>
-    
-    
-    <p><a href="#/corp">Back</a></p>
-</div>
+        <p><strong>Email: </strong>
+            <a href="" ng-href="mailto:{{vm.corp.email}}">{{vm.corp.email}}</a>
+        </p>
+
+        <p><strong>Phone: </strong>
+            <a href="" ng-href="mailto:{{vm.corp.phone}}">{{vm.corp.phone}}</a>
+        </p>
+
+        <address>
+            <p><strong>Owner: </strong>{{vm.corp.owner}}</p> <br />
+            {{vm.corp.location}}
+        </address>
+
+
+        <div class="googleMap"></div>
+
+
+        <p><a href="#/corp">Back</a></p>
+    </div>
 </div>

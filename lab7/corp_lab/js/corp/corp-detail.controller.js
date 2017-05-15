@@ -28,7 +28,7 @@
                     vm.corp.incorp_dt = new Date(vm.corp.incorp_dt);
                 }
                 console.log(vm.corp);                
-                loadMap('41.8239890,-71.4128340');
+                loadMap(vm.corp.location);
             });
         }
                
