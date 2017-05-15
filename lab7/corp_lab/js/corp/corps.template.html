@@ -37,8 +37,9 @@
                             <th class='text-center'> Corp</th>
                             <th class='text-center'>Phone</th>                
                             <th></th>
+                        <!--not in the scope of the current project
                             <th></th>
-                            <th></th>
+                            <th></th>       -->
                         </tr>
                     </thead>    
                     <!--search filter added-->
@@ -46,8 +47,10 @@
                         <td>{{corp.corp}}</td>                  
                         <td>{{corp.phone}}</td>
                         <td><a ng-href="#/corp/{{corp.id}}">View</a></td>
+                    <!--not in the scope of the current project    
                         <td><a ng-href="#/corp/delete/{{corp.id}}" data-confirm-delete>Delete Link</a></td>
-                        <td><button class="btn btn-danger" ng-click="vm.deleteCorp(corp.id)">Delete</button></td>
+                        <td><button class="btn btn-danger" ng-click="vm.deleteCorp(corp.id)" data-confirm-delete>Delete</button></td>
+                                            -->
                     </tr>
                 </table>
                 </div>

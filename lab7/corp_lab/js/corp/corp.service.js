@@ -63,6 +63,7 @@
                 }  
             }
          function postCorp(corp, incorp_dt, email, owner, phone, location) {
+            /*  this function is ot currently in the scope of this assignment
                 var model = {};
                 model.corp = corp;
                 model.incorp_dt = incorp_dt;
@@ -70,13 +71,15 @@
                 model.owner = owner;
                 model.phone = phone;
                 model.state = location;
-                return $http.post(url, model);
+                return $http.post(url, model);*/
             }
             function deleteCorp(id) {
+            /*  this function is ot currently in the scope of this assignment
                 var _url = url + '/' + id;
-                return $http.delete(_url);
+                return $http.delete(_url);*/
             }
             function putCorp(id, corp, incorp_dt, email, owner, phone, location) {  
+            /*  this function is ot currently in the scope of this assignment    
                 var _url = url + '/' + id;
                 var model = {};
                 model.corp = corp;
@@ -85,7 +88,7 @@
                 model.owner = owner;
                 model.phone = phone;
                 model.state = location;
-                return $http.put(_url, model);
+                return $http.put(_url, model);*/
             }
     }
 

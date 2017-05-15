@@ -23,12 +23,13 @@
                 templateUrl: 'js/corp/corp-detail.template.html',
                 controller: 'CorpDetailController',
                 controllerAs: 'vm'
-            }).
+            });
+            /*this function is ot currently in the scope of this assignment
             when('/corp/delete/:corpId', {
                 templateUrl: 'js/corp/corp-delete.template.html',
                 controller: 'CorpDeleteController',
                 controllerAs: 'vm'
-            });
+            });*/
     }
 
 })();

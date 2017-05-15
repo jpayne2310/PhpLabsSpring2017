@@ -13,7 +13,7 @@
         var vm = this;
 
         vm.corps = [];
-        vm.deleteCorp = deleteCorp;
+        //vm.deleteCorp = deleteCorp;
         vm.message = '';
 
         activate();
@@ -25,7 +25,7 @@
                 vm.corps = response;
             });
         }
-        
+        /*  this function is ot currently in the scope of this assignment
         function deleteCorp(corpId) {
              CorpService.deleteCorp(corpId).then(function (response) {
                 vm.message = 'Corporation Deleted';
@@ -33,7 +33,7 @@
             }, function(error) {
                 vm.message = 'Corporation was NOT Deleted';
             });
-        }
+        }*/
 
     }
     
