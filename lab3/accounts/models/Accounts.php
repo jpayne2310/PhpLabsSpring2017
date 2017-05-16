@@ -30,6 +30,19 @@ class Accounts extends DB {
                 else {
                 return false;}
     }
+    
+    public function checkDubEmail ($email){
+        $validation = new Validation();
+        $db = $this->getDB();
+        $stmt = $db->prepare("SELECT * from users where email = :email");
+        $binds = array(
+        ":email" => $email);      
+        
+            if ($stmt->execute($binds) && $stmt->rowCount()>0){
+                return true;} 
+                else {
+                return false;}
+    }
 
     public function login($email, $password) {
         $db = $this->getDB();
