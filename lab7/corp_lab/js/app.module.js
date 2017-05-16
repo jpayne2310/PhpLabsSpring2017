@@ -9,7 +9,8 @@
     /* Recommend Style: https://github.com/johnpapa/angular-styleguide */
     'use strict';
     /*
-     * This is the main Module.  We will inculde our feature modules to this module.
+     * This is the main Module.  We will inculde our feature modules to this 
+     * module.
      */
     angular.module('app', ['ngRoute']);
 
